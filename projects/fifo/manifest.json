@@ -1,0 +1,21 @@
+{
+  "sim_top": "fifo_tb",
+  "syn_top": "fifo",
+  "constraints": [
+	"constraints/example.sdc"
+	],
+  "include_dirs": [
+    "rtl",
+    "tb"
+  ],
+  "defines": [],
+  "packages": [
+  ],
+  "rtl_files": [
+	"rtl/fifo.sv"
+  ],
+  "tb_files": [
+	//"tb/fifo_tb_basic.sv",
+	"tb/fifo_tb_catch_mismatch.sv"
+  ]
+}

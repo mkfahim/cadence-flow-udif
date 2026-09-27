@@ -1,0 +1,11 @@
+**/*log*
+**/*cmd*
+projects/*/pnr*
+projects/*/synth*
+**/.simvision/
+**/cov_work/
+**/qaLog.txt
+**/*.history
+**/xcelium.d/
+**/xrun*
+**/waves.shm
