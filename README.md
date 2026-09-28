@@ -1,6 +1,6 @@
 # Full Cadence Flow Based on [UDIF](https://github.com/atsh/udif)
 
-## Overview
+### Overview
 
 This repository builds upon the **UDIF (University Digital Implementation Flow)** created by Ataus Shafi to provide a streamlined, step-by-step approach to Cadence tool usage for new users. The main goals are:
 
@@ -60,6 +60,28 @@ which virtuoso
 
 If the command returns the path to the Cadence executable, the Cadence environment has been loaded successfully.
 
+### Cadence Library File Configuration
+
+Cadence tools require a `cds.lib` library definition file. The location and contents of this file are institution-specific and should normally be provided by your university's CAD/IT administrator or instructor.
+
+Before starting a UDIF project, make sure the appropriate `cds.lib` is available to the Cadence environment.
+
+For example, if your institution provides the library file at:
+
+```bash
+/path/to/<CADENCE_CDS_LIB>
+```
+
+you may copy it to your designated Cadence workspace:
+
+```bash
+cp /path/to/<CADENCE_CDS_LIB> <CADENCE_WORKSPACE>/cds.lib
+```
+
+> **Note:** Do not assume that `cds.lib` must be placed inside the UDIF repository or project directory. Cadence determines library definitions through its environment and library-search configuration. Follow your institution's Cadence setup instructions if a specific location is required.
+
+If your institution's Cadence environment already provides or discovers `cds.lib`, no additional copy is required.
+
 ### Further Setup Steps
 > **For all users:** These steps are intended for users who want to create and initialize a new project workspace using the **UDIF (University Digital Implementation Flow)**. If you are starting a new project, follow the steps below to create the required project directory structure and working environment.
 
@@ -75,25 +97,20 @@ If the command returns the path to the Cadence executable, the Cadence environme
    mkdir -p <WORK_DIR>
    cd <WORK_DIR>
    ```
-
-3. Copy the Cadence library file:
-   ```bash
-   cp /path/to/<CADENCE_CDS_LIB> cds.lib
-   ```
-
-4. Clone the UDIF repository:
+   
+3. Clone the UDIF repository:
    ```bash
    git clone https://github.com/atsh/udif
    cd udif
    ```
 
-5. Initialize your new project directory:
+4. Initialize your new project directory:
    ```csh
    source env.sh <PROJECT_NAME>
    make setup
    ```
 
-6. Navigate to your new project working directory:
+5. Navigate to your new project working directory:
    ```bash
    cd projects/<PROJECT_NAME>
    ```
@@ -119,9 +136,8 @@ After setup is complete, your project directory (`projects/<PROJECT_NAME>`) will
 
 This section will provide a detailed, step-by-step procedure for executing the pre-configured example designs included in the `/projects` directory, named `alu32` and `fifo`. The complete execution procedure for both designs, including the required setup and flow configuration, will be added here in a future update.
 
----
-
-## Attribution
+<details>
+<summary><h3>Attribution & Citation</h3></summary>
 
 This project includes original work developed by Ataus Shafi.
 
@@ -134,6 +150,6 @@ If you use this project, in whole or in part, including source or binary compone
 - The About/Info section of your software or tool
 - An appropriate academic citation or reference when used in research
 
-### Citation
-
 > This project uses work from [UDIF](https://github.com/atsh/udif) by Ataus Shafi (GitHub: [@atsh](https://github.com/atsh)), licensed under Apache 2.0.
+
+</details>
